@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Fooding</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_table">我的餐桌</string>
+
+
+</resources>

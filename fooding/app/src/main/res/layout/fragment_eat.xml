@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".fragment.EatingFragment">
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textSize="15sp"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:layout_marginLeft="12sp"
+            android:layout_marginTop="12sp"
+            android:layout_marginBottom="12sp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12sp"
+            android:layout_marginLeft="12sp"
+            android:layout_marginBottom="12sp"
+            android:layout_weight="6"
+            android:orientation="horizontal"
+            android:background="@drawable/circle_edit_1">
+            <ImageView
+                android:layout_marginLeft="6sp"
+                android:src="@drawable/ic_baseline_search_24"
+                android:layout_weight="0.15"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+            <EditText
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:background="@null"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_marginTop="14sp"
+            android:layout_marginBottom="14sp"
+            android:layout_marginLeft="10sp"
+            android:src="@drawable/ic_baseline_loupe_24_c"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_marginTop="14sp"
+            android:layout_marginBottom="14sp"
+            android:layout_marginRight="14sp"
+            android:src="@drawable/ic_baseline_notifications_none_24"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_eating"
+        android:background="@color/white"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/orange"
+        app:tabIndicatorHeight="5dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextAppearance="@style/TabTextStyle"
+        app:tabTextColor="@color/tab_text_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/eating_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </FrameLayout>
+
+
+
+</LinearLayout>
