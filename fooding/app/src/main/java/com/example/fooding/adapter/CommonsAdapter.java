@@ -37,13 +37,15 @@ public class CommonsAdapter extends RecyclerView.Adapter<CommonsAdapter.ViewHold
         if (mcontext == null) {
             mcontext = parent.getContext();
         }
+        int position = holder.getAdapterPosition();
+        DataCommon usefulData = mdata.get(position);
 
         return holder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        DataCommon common=mdata.get(position);
 
     }
 

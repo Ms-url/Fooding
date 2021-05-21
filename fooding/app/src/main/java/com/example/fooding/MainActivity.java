@@ -16,6 +16,8 @@ import com.example.fooding.fragment.EatingFragment;
 import com.example.fooding.fragment.TableFragment;
 import com.google.android.material.tabs.TabLayout;
 
+import org.litepal.LitePal;
+
 import java.util.ArrayList;
 import java.util.List;
 

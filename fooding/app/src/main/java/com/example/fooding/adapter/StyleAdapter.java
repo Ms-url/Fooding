@@ -1,10 +1,12 @@
 package com.example.fooding.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,13 +15,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fooding.R;
 import com.example.fooding.data.DataCommon;
+import com.example.fooding.data.Restaurant;
 
 import java.util.List;
 
 
 public class StyleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private LayoutInflater mlayoutInflater;
-    private List<DataCommon> mdata;
+    private List<Restaurant> mdata;
     private Context mcontext;
 
     private final static int ITEM_CONTENT = 0;
@@ -29,10 +32,12 @@ public class StyleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
+        LinearLayout linearLayout;
 
         public ViewHolder(View view) {
             super(view);
             textView = view.findViewById(R.id.style_item);
+            linearLayout = view.findViewById(R.id.style_item_body);
         }
     }
 
@@ -44,7 +49,7 @@ public class StyleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         }
     }
 
-    public StyleAdapter(List<DataCommon> mdata) {
+    public StyleAdapter(List<Restaurant> mdata) {
         this.mdata = mdata;
     }
 
@@ -64,7 +69,7 @@ public class StyleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 @Override
                 public void onClick(View v) {
                     int position = viewHolder.getAdapterPosition();
-                    DataCommon dataCommon = mdata.get(position);
+                    Restaurant dataCommon = mdata.get(position);
                     Toast.makeText(mcontext,dataCommon.getName(),Toast.LENGTH_SHORT).show();
                 }
             });
@@ -92,8 +97,9 @@ public class StyleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
         if (holder instanceof ViewHolder) {
-            DataCommon dataCommon = mdata.get(position);
+            Restaurant dataCommon = mdata.get(position);
             ((ViewHolder) holder).textView.setText(dataCommon.getName());
+            ((ViewHolder) holder).linearLayout.setBackgroundColor(Color.parseColor(dataCommon.getColor()));
         }
         if (holder instanceof FootViewHolder) {
 

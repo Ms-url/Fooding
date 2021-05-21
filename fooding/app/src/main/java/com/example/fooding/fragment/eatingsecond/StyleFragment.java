@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.example.fooding.R;
 import com.example.fooding.adapter.StyleAdapter;
 import com.example.fooding.data.DataCommon;
+import com.example.fooding.data.Restaurant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ import java.util.List;
 public class StyleFragment extends Fragment {
     View view;
     private RecyclerView recyclerView;
-    private List<DataCommon> list = new ArrayList<>();
+    private List<Restaurant> list = new ArrayList<>();
     private StyleAdapter dataAdapter = new StyleAdapter(list);
     private String responseData;
 
@@ -37,7 +38,7 @@ public class StyleFragment extends Fragment {
                     GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
                     recyclerView.setLayoutManager(layoutManager);
                     recyclerView.setAdapter(dataAdapter);
-                    Log.e("kkkkkk","kkkkkkkkkk");
+                    Log.e("handler recycler 系列log","StyleFragment UI charge");
                     break;
 
             }
@@ -49,13 +50,9 @@ public class StyleFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_style, container, false);
         recyclerView = view.findViewById(R.id.style_recycler_view);
-        list.clear();
 
-        list.add(new DataCommon("中心"));
-        list.add(new DataCommon("大西北"));
-        list.add(new DataCommon("酒吧"));
         showResponse(1);
-
+        list.clear();
         return view;
     }
 

@@ -10,6 +10,9 @@
     <color name="green">#51D856</color>
     <color name="red">#E31D1D</color>
     <color name="orange">#EC5424</color>
+    <color name="yellow">#F1DD2E</color>
+    <color name="blue">#556CEA</color>
+    <color name="pink">#F63073</color>
     <color name="hui">#C3C3C2</color>
     <color name="tab_text_1">#7A7A7A</color>
 </resources>

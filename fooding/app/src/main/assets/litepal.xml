@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="Fooding"/>
+    <version value='1'/>
+    <list>
+        <mapping class="com.example.fooding.data.Restaurant"/>
+        <mapping class="com.example.fooding.data.Store"/>
+        <mapping class="com.example.fooding.data.Food"/>
+    </list>
+</litepal>
