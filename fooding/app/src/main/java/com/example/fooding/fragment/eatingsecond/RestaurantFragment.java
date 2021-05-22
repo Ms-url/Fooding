@@ -32,7 +32,7 @@ public class RestaurantFragment extends Fragment {
                              Bundle savedInstanceState) {
         view =inflater.inflate(R.layout.fragment_restaurant, container, false);
         recyclerView=view.findViewById(R.id.eating_restaurant_recycler);
-        recyclerView.addItemDecoration(new SpacesItemDecoration(0));
+        recyclerView.addItemDecoration(new SpacesItemDecoration(12));
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);

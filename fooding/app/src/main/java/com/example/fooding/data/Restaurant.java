@@ -4,10 +4,37 @@ import org.litepal.crud.LitePalSupport;
 
 public class Restaurant extends LitePalSupport {
     private String name;
-    private int id;
+    private int id;    //10001
     private String color;
     private String background;
     private int mod;
+    private int count;
+    private int count_like;
+    private int count_dislike;
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public int getCount_like() {
+        return count_like;
+    }
+
+    public void setCount_like(int count_like) {
+        this.count_like = count_like;
+    }
+
+    public int getCount_dislike() {
+        return count_dislike;
+    }
+
+    public void setCount_dislike(int count_dislike) {
+        this.count_dislike = count_dislike;
+    }
 
     public String getName() {
         return name;

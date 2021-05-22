@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="TabTextStyle">
-        <item name="android:textSize">@dimen/textSize</item>
+        <item name="android:textSize">@dimen/textSize_12</item>
     </style>
-    <dimen name="textSize">12sp</dimen>
+    <!--  common  -->
+    <dimen name="textSize_12">12sp</dimen>
+    <dimen name="textSize_14_1">14sp</dimen>
+    <dimen name="textSize_16_1">16sp</dimen>
+    <dimen name="textSize_17_1">17sp</dimen>
+    <dimen name="textSize_18_1">18sp</dimen>
+    <dimen name="textSize_20_1">20sp</dimen>
+    <dimen name="marg">12sp</dimen>
+    <dimen name="marg2">10sp</dimen>
+
+    <!--  common_recycler  -->
+    <dimen name="re_item_marg">12sp</dimen>
+    <dimen name="welcome">28sp</dimen>
+
+    <!--   eating_restaurant_fragment  -->
     <dimen name="three_button_r">46dp</dimen>
     <dimen name="restaurant_item_title">20sp</dimen>
-    <dimen name="re_item_marg">12sp</dimen>
     <dimen name="restaurant_item">12sp</dimen>
-    <dimen name="welcome">28sp</dimen>
+
+    <!--   level_one_class -->
+    <dimen name="level_one_big_button">99dp</dimen>
+    <dimen name="level_one_xiao1_button">66dp</dimen>
+    <dimen name="level_one_xiao2_button">46dp</dimen>
+    <dimen name="level_one_left_button_left_distance">67dp</dimen>
+    <dimen name="level_one_right_button_right_distance">27dp</dimen>
+    <dimen name="level_one_right_button2_right_distance">86dp</dimen>
+    <dimen name="level_one_left_recycler_width">100dp</dimen>
+    <dimen name="level_one_bottom_height">74dp</dimen>
+
+
+
 
 </resources>

@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,7 +36,7 @@ public class EatingRestaurantAdapter extends RecyclerView.Adapter<EatingRestaura
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView title;
-        ConstraintLayout constraintLayout;
+        CardView constraintLayout;
         Button button_cancel;
         Button button_setting;
         ImageButton button_delete;

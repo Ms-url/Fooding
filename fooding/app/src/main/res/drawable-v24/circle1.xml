@@ -4,7 +4,7 @@
     <stroke
         android:width="0.4sp" />
     <solid
-        android:color="@color/red"/>
+        android:color="@color/orange"/>
     <size
         android:width="21dp"
         android:height="21dp"/>
