@@ -11,12 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fooding.R;
-import com.example.fooding.data.DataCommon;
 import com.example.fooding.data.Food;
-import com.example.fooding.data.Restaurant;
 import com.example.fooding.data.Store;
 import com.example.fooding.unit.FlowLayout;
-import com.example.fooding.unit.FlowLayout2;
 
 import org.litepal.LitePal;
 
@@ -24,33 +21,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class LevelOneReRigthAdapter extends RecyclerView.Adapter<LevelOneReRigthAdapter.ViewHolder> {
+public class LevelOneReLeftAdapter extends RecyclerView.Adapter<LevelOneReLeftAdapter.ViewHolder> {
     private List<Store> storesData;
     private Context mcontext;
 
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView store_name;
-        RadioButton radioButton;
-        FlowLayout mFlowLayout;
 
         public ViewHolder(View view) {
             super(view);
-            store_name = view.findViewById(R.id.level_one_card_store_name);
-            radioButton = view.findViewById(R.id.level_one_card_whether_click);
-            mFlowLayout = view.findViewById(R.id.my_flow);
+            store_name = view.findViewById(R.id.level_one_left_recycler_item);
 
         }
     }
 
-    public LevelOneReRigthAdapter(List<Store> storesData) {
+    public LevelOneReLeftAdapter(List<Store> storesData) {
         this.storesData = storesData;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_itme_level_one_right, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.level_left_re_item, parent, false);
         final ViewHolder holder = new ViewHolder(view);
         if (mcontext == null) {
             mcontext = parent.getContext();
@@ -66,19 +59,6 @@ public class LevelOneReRigthAdapter extends RecyclerView.Adapter<LevelOneReRigth
         Store store = storesData.get(position);
         holder.store_name.setText(store.getName());
 
-        List<Food> list_f = LitePal.where("store=?", store.getName()).find(Food.class);
-        List<String> list = new ArrayList<>();
-        for (Food fo:list_f){
-            list.add(fo.getName());
-        }
-
-        holder.mFlowLayout.setAdapter(list, R.layout.flow_item_text, new FlowLayout.ItemView<String>() {
-
-            @Override
-            protected void getCover(String item, FlowLayout.ViewHolder holder, View inflate, int position) {
-                holder.setText(R.id.item_f,item);
-            }
-        });
     }
 
     @Override

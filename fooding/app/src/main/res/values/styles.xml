@@ -23,6 +23,7 @@
     <dimen name="restaurant_item">12sp</dimen>
 
     <!--   level_one_class -->
+    <dimen name="jia_actionBar">54dp</dimen>
     <dimen name="level_one_big_button">99dp</dimen>
     <dimen name="level_one_xiao1_button">66dp</dimen>
     <dimen name="level_one_xiao2_button">46dp</dimen>

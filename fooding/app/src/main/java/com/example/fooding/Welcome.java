@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.storage.StorageManager;
+import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.AnticipateOvershootInterpolator;
@@ -51,7 +52,7 @@ public class Welcome extends AppCompatActivity {
 
             String whole_store[][] = {
                     {"中心","小面", "米线", "精品大众餐", "不忘出茶"},
-                    {"延生","精众餐", "铁板炒饭", "膳善堂", "烤状元", "蛋包饭", "f牛肉饭", "心意饺坊", "渝运冒菜"},
+                    {"延生","精品大众餐-延生", "铁板炒饭", "膳善堂", "烤状元", "蛋包饭", "f牛肉饭", "心意饺坊", "渝运冒菜"},
                     {"莘莘","自选餐", "香香米", "大众餐", "面", "粉", "冒菜"},
                     {"千喜鹤","千喜鹤"},
                     {"大西北","大西北"},
@@ -64,12 +65,12 @@ public class Welcome extends AppCompatActivity {
                     { "膳善堂","xxxxx盖饭", "xxx盖饭", "xxxxx盖饭", "xx盖饭", "xxx盖饭", "xxxxx盖饭", "xxx盖饭", "xxx盖饭", "xxx盖饭"},
                     { "烤状元","xx烤肉饭", "xx烤肉饭", "xx烤肉饭", "xxxxx烤肉饭", "xx烤肉饭", "xxxx锡纸饭", "xx锡纸饭", "xxxx锡纸饭", "xxxx锡纸饭"},
                     { "蛋包饭","蛋包饭"},
-                    {"牛肉饭","xxxx牛肉饭", "xxxx牛肉饭", "xxxx牛肉饭", "xxxx牛肉饭", "xxx牛肉饭", "xx牛肉饭", "xx牛肉饭"},
+                    {"f牛肉饭","xxxx牛肉饭", "xxxx牛肉饭", "xxxx牛肉饭", "xxxx牛肉饭", "xxx牛肉饭", "xx牛肉饭", "xx牛肉饭"},
                     { "心意饺坊","xxx饺子", "xxx饺子", "xxx饺子", "xxx饺子", "xxx混沌", "xxx混沌", "xxx肠粉", "xxx肠粉", "xxx肠粉"},
-                    { "冒菜","xx冒菜", "xx冒菜", "xx冒菜"}
+                    { "渝运冒菜","xx冒菜", "xx冒菜", "xx冒菜"}
 
             };
-            String r_color[] = {"#E31D1D", "#556CEA","#FF03DAC5" , "#51D856", "#F1DD2E", "#556CEA"};
+            String r_color[] = {"#E31D1D", "#556CEA","#10AFA0" , "#51D856", "#F1DD2E", "#556CEA"};
 
             for(int i=0;i<whole_store.length;i++){
                 Restaurant restaurant = new Restaurant();
@@ -87,6 +88,7 @@ public class Welcome extends AppCompatActivity {
                     store.setName(whole_store[i][k]);
                     store.setId(20000+k);
                     store.save();
+                    Log.e("jkjkjkjkjkj","jkjk-----");
                 }
             }
 
@@ -99,6 +101,7 @@ public class Welcome extends AppCompatActivity {
                     food.setName(whole_food[i][k]);
                     food.setId(30000+k);
                     food.save();
+                    Log.e("ghghhghghgh","hghghgh-----");
                 }
             }
 

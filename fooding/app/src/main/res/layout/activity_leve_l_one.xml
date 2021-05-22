@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".LeveLOne">
 
-    <include layout="@layout/level_one_include_answer"/>
 
     <include layout="@layout/level_one_include_recycler"/>
+    <include layout="@layout/level_one_include_answer"/>
 
     <FrameLayout
         android:layout_gravity="bottom"
@@ -19,27 +19,33 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/level_one_bottom_height"
             android:layout_gravity="bottom"/>
-        <ImageButton
-            android:background="@drawable/circle1"
-            android:layout_gravity="center|top"
+
+        <Button
             android:layout_width="@dimen/level_one_big_button"
-            android:layout_height="@dimen/level_one_big_button"/>
+            android:layout_height="@dimen/level_one_big_button"
+            android:layout_gravity="center|top"
+            android:background="@drawable/circle1"
+            android:text="@string/GO"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:backgroundTint="#FF5722" />
         <ImageButton
+
             android:layout_marginLeft="@dimen/level_one_left_button_left_distance"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/circle"
+            android:background="@drawable/ic_baseline_offline_bolt_24"
             android:layout_width="@dimen/level_one_xiao1_button"
             android:layout_height="@dimen/level_one_xiao1_button"/>
         <ImageButton
             android:layout_marginRight="@dimen/level_one_right_button_right_distance"
             android:layout_gravity="right"
-            android:background="@drawable/circle"
+            android:background="@drawable/ic_baseline_next_plan_24"
             android:layout_width="@dimen/level_one_xiao1_button"
             android:layout_height="@dimen/level_one_xiao1_button"/>
         <ImageButton
             android:layout_marginRight="@dimen/level_one_right_button2_right_distance"
             android:layout_gravity="right|bottom"
-            android:background="@drawable/circle"
+            android:background="@drawable/ic_baseline_cancel_24"
             android:layout_marginBottom="@dimen/marg2"
             android:layout_width="@dimen/level_one_xiao2_button"
             android:layout_height="@dimen/level_one_xiao2_button"/>

@@ -4,6 +4,7 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -98,6 +99,7 @@ public class EatingRestaurantAdapter extends RecyclerView.Adapter<EatingRestaura
                 int position = holder.getAdapterPosition();
                 Restaurant restaurant = mdata.get(position);
                 intent.putExtra("name",restaurant.getName());
+                intent.putExtra("color",restaurant.getColor());
                 mcontext.startActivity(intent);
 
             }
@@ -150,7 +152,8 @@ public class EatingRestaurantAdapter extends RecyclerView.Adapter<EatingRestaura
                 Intent intent = new Intent(mcontext, RestaurantSetting.class);
                 int position = holder.getAdapterPosition();
                 Restaurant restaurant = mdata.get(position);
-                intent.putExtra("name",restaurant.getName());
+                Log.e("restaurant.getName()",restaurant.getName());
+                intent.putExtra("thename",restaurant.getName());
                 mcontext.startActivity(intent);
 
             }
@@ -163,7 +166,7 @@ public class EatingRestaurantAdapter extends RecyclerView.Adapter<EatingRestaura
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Restaurant restaurant = mdata.get(position);
         holder.title.setText(restaurant.getName());
-        holder.constraintLayout.setBackgroundColor(Color.parseColor(restaurant.getColor()));
+        holder.constraintLayout.setCardBackgroundColor(Color.parseColor(restaurant.getColor()));
 
     }
 
