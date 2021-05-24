@@ -7,24 +7,25 @@
     tools:context=".fragment.BabyFragment">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="66dp"
         android:layout_margin="@dimen/marg"
+        android:background="@drawable/circle_b"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/circle_b"
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:textSize="@dimen/textSize_18_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
+            android:text="baby"
             android:textColor="@color/white"
-            android:text="bady"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/textSize_18_1" />
     </LinearLayout>
 
     <TextView
@@ -117,6 +118,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_init"
+        android:layout_width="89dp"
+        android:layout_height="92dp"
+        android:background="@drawable/circle"
+        android:text="@string/init"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.785" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -73,7 +73,7 @@ public class Welcome extends AppCompatActivity {
                     { "渝运冒菜","xx冒菜", "xx冒菜", "xx冒菜"}
 
             };
-            String r_color[] = {"#E31D1D", "#556CEA","#10AFA0" , "#51D856", "#F1DD2E", "#556CEA"};
+            String r_color[] = {"#E31D1D", "#556CEA","#10AFA0" , "#51D856", "#F1DD2E", "#F63073"};
 
             for(int i=0;i<whole_store.length;i++){
                 Restaurant restaurant = new Restaurant();

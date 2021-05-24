@@ -1,6 +1,7 @@
 package com.example.fooding.fragment;
 
 import android.animation.ObjectAnimator;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,16 +12,25 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fooding.R;
+import com.example.fooding.data.Food;
+import com.example.fooding.data.Restaurant;
+import com.example.fooding.data.Store;
+
+import org.litepal.LitePal;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class BabyFragment extends Fragment {
     View view;
+    Button button_init;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +40,19 @@ public class BabyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view =inflater.inflate(R.layout.fragment_baby, container, false);
+        button_init = view.findViewById(R.id.bt_init);
+
+        button_init.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LitePal.deleteAll(Restaurant.class);
+                LitePal.deleteAll(Store.class);
+                LitePal.deleteAll(Food.class);
+                SharedPreferences sp = getActivity().getPreferences(MODE_PRIVATE);
+                sp.edit().putBoolean("isFirst", true).commit();
+            }
+        });
+
 
         final Animation animation1= AnimationUtils.loadAnimation(getActivity(),R.anim.scan_circle);
         final Animation animation2= AnimationUtils.loadAnimation(getActivity(),R.anim.scan_circle);

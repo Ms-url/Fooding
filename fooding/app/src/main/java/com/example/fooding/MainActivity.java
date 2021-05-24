@@ -48,24 +48,24 @@ public class MainActivity extends AppCompatActivity {
         fragmentList.clear();
         fragmentTitle.clear();
         fragmentTitle.add("食堂");
-        //fragmentTitle.add("餐桌");
+        fragmentTitle.add("餐桌");
         fragmentTitle.add("发现");
         fragmentList.add(eatingFragment);
-       // fragmentList.add(tableFragment);
+        fragmentList.add(tableFragment);
         fragmentList.add(babyFragment);
 
         main_content.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(),
                 ViewPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT));
         tabLayout.setupWithViewPager(main_content);
-      //  main_content.setOffscreenPageLimit(3);
+        main_content.setOffscreenPageLimit(3);
       //main_content.setCurrentItem(1);//设置初始位置
 
         TabLayout.Tab tab_restaurant = tabLayout.getTabAt(0);
-        TabLayout.Tab tab_find = tabLayout.getTabAt(1);
-      //  TabLayout.Tab tab_self = tabLayout.getTabAt(2);
-        tab_restaurant.setIcon(getResources().getDrawable(R.drawable.table));
-        tab_find.setIcon(getResources().getDrawable(R.drawable.find));
-      //  tab_self.setIcon(getResources().getDrawable(R.drawable.ic_baseline_face_24));
+        TabLayout.Tab tab_table = tabLayout.getTabAt(1);
+        TabLayout.Tab tab_find = tabLayout.getTabAt(2);
+        tab_restaurant.setIcon(getResources().getDrawable(R.drawable.ic_baseline_restaurant_menu_24));
+        tab_find.setIcon(getResources().getDrawable(R.drawable.ic_baseline_local_fire_department_24));
+        tab_table.setIcon(getResources().getDrawable(R.drawable.ic_baseline_all_out_24));
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

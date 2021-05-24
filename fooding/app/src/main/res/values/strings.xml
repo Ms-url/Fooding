@@ -7,6 +7,7 @@
     <string name="my_restaurant">食堂</string>
     <string name="my_store">店铺</string>
     <string name="TODT">功能暂未实现</string>
+    <string name="init">初始化</string>
 
 
 </resources>

@@ -22,7 +22,7 @@
         app:tabIndicatorColor="@color/teal_200"
         app:tabIndicatorHeight="0dp"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/purple_700"
+        app:tabSelectedTextColor="@color/orange_s"
         app:tabTextAppearance="@style/TabTextStyle"
         app:tabTextColor="#0B0A0A" />
 

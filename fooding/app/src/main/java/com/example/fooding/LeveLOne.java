@@ -80,7 +80,7 @@ public class LeveLOne extends AppCompatActivity {
             @Override
             public void onGlobalLayout() {
                 hi = constraintLayout.getMeasuredHeight();
-                ObjectAnimator animator1 = ObjectAnimator.ofFloat(constraintLayout, "translationY", 0, -hi + 106 * 2);
+                ObjectAnimator animator1 = ObjectAnimator.ofFloat(constraintLayout, "translationY", 0, -hi + 98 * 2);
                 animator1.setStartDelay(100);
                 animator1.setDuration(1000);
                 animator1.start();
@@ -107,7 +107,7 @@ public class LeveLOne extends AppCompatActivity {
         LevelOneReLeftAdapter adapter = new LevelOneReLeftAdapter(stores);
 
         recyclerView1.addItemDecoration(new SpacesItemDecoration(12));
-        recyclerView2.addItemDecoration(new SpacesItemDecoration(12));
+        recyclerView2.addItemDecoration(new SpacesItemDecoration(8));
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(this);

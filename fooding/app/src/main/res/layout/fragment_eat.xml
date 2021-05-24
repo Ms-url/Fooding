@@ -17,10 +17,10 @@
             android:textSize="15sp"
             android:gravity="center"
             android:text="@string/app_name"
-            android:layout_marginLeft="12sp"
+            android:layout_marginLeft="1sp"
             android:layout_marginTop="12sp"
             android:layout_marginBottom="12sp"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1.5" />
 
@@ -28,7 +28,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginTop="12sp"
-            android:layout_marginLeft="12sp"
+            android:layout_marginLeft="1sp"
             android:layout_marginBottom="12sp"
             android:layout_weight="6"
             android:orientation="horizontal"

@@ -121,10 +121,16 @@ public class EatingRestaurantAdapter extends RecyclerView.Adapter<EatingRestaura
                 final Animation animation2= AnimationUtils.loadAnimation(mcontext,R.anim.show_to_zero);
                 final Animation animation3= AnimationUtils.loadAnimation(mcontext,R.anim.show_to_zero);
                 final Animation animation4= AnimationUtils.loadAnimation(mcontext,R.anim.show_to_zero);
-                ObjectAnimator animator = ObjectAnimator.ofFloat(holder.constraintLayout,"scaleX",1,2);
-                ObjectAnimator animator2 = ObjectAnimator.ofFloat(holder.constraintLayout,"translationX",1,(float)(holder.constraintLayout.getWidth())/4);
-                ObjectAnimator animator3 = ObjectAnimator.ofFloat(holder.title,"scaleX",1,(float)0.5);
-                ObjectAnimator animator4 = ObjectAnimator.ofFloat(holder.title,"translationX",1,(float)(holder.title.getWidth())/4);
+
+                ObjectAnimator animator = ObjectAnimator.ofFloat(holder.constraintLayout,"scaleX", (float) 0.5,1);
+                ObjectAnimator animator2 = ObjectAnimator.ofFloat(holder.constraintLayout,"translationX",(float)(holder.constraintLayout.getWidth())/4,1);
+                ObjectAnimator animator3 = ObjectAnimator.ofFloat(holder.title,"translationX",-(float)(holder.title.getWidth())/2,1);
+                ObjectAnimator animator4 = ObjectAnimator.ofFloat(holder.title,"scaleX",2,1);
+
+//                ObjectAnimator animator = ObjectAnimator.ofFloat(holder.constraintLayout,"scaleX",1,2);
+//                ObjectAnimator animator2 = ObjectAnimator.ofFloat(holder.constraintLayout,"translationX",1,(float)(holder.constraintLayout.getWidth())/4);
+//                ObjectAnimator animator3 = ObjectAnimator.ofFloat(holder.title,"scaleX",1,(float)0.5);
+//                ObjectAnimator animator4 = ObjectAnimator.ofFloat(holder.title,"translationX",1,(float)(holder.title.getWidth())/4);
 
                 animator.setStartDelay(420);
                 animator2.setStartDelay(420);
