@@ -1,29 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.tablesecond.FoodMenuFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:text="@string/hello_blank_fragment" />
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_table"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:tabGravity="fill"
-        app:tabIndicatorColor="@color/orange"
-        app:tabIndicatorHeight="5dp"
-        app:tabMode="scrollable"
-        app:tabIndicatorFullWidth="false"
-        app:tabSelectedTextColor="@color/black"
-        app:tabTextAppearance="@style/TabTextStyle"
-        app:tabTextColor="@color/tab_text_1" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:text="@string/my_restaurant" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tab_table_restaurant"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:text="@string/my_store" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tab_table_stores"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </FrameLayout>

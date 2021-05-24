@@ -2,65 +2,83 @@ package com.example.fooding.fragment.tablesecond;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
+import android.os.Message;
+import android.os.RecoverySystem;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.fooding.R;
+import com.example.fooding.adapter.TabRestaurantRecyclerAdapter;
+import com.example.fooding.adapter.TabStoreRecyclerAdapter;
+import com.example.fooding.data.Restaurant;
+import com.example.fooding.data.Store;
+import com.google.android.material.tabs.TabLayout;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FoodMenuFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import org.litepal.LitePal;
+
+import java.util.List;
+
 public class FoodMenuFragment extends Fragment {
+    View view;
+    RecyclerView recyclerView1;
+    RecyclerView recyclerView2;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private Handler handler = new Handler() {
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 1:
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public FoodMenuFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FoodMenuFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FoodMenuFragment newInstance(String param1, String param2) {
-        FoodMenuFragment fragment = new FoodMenuFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            }
         }
-    }
+    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_food_menu, container, false);
+        view = inflater.inflate(R.layout.fragment_food_menu, container, false);
+        recyclerView1 = view.findViewById(R.id.tab_table_restaurant);
+        recyclerView2 = view.findViewById(R.id.tab_table_stores);
+
+        List<Store> stores = LitePal.findAll(Store.class);
+        List<Restaurant> restaurants = LitePal.findAll(Restaurant.class);
+
+        TabRestaurantRecyclerAdapter tabRestaurantRecyclerAdapter= new TabRestaurantRecyclerAdapter(restaurants);
+        TabStoreRecyclerAdapter tabStoreRecyclerAdapter = new TabStoreRecyclerAdapter(stores);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        LinearLayoutManager layoutManager2 = new LinearLayoutManager(getActivity());
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        layoutManager2.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerView1.setLayoutManager(layoutManager);
+        recyclerView2.setLayoutManager(layoutManager2);
+        recyclerView1.setAdapter(tabRestaurantRecyclerAdapter);
+        recyclerView2.setAdapter(tabStoreRecyclerAdapter);
+
+
+
+        return view;
     }
+
+    private void showResponse(int num) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Message message = new Message();
+                message.what = num;
+                handler.sendMessage(message);
+            }
+        }).start();
+    }
+
+
 }

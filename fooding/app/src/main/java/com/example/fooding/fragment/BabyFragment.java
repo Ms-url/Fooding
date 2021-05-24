@@ -1,5 +1,6 @@
 package com.example.fooding.fragment;
 
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,6 +14,7 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.fooding.R;
 
@@ -33,24 +35,24 @@ public class BabyFragment extends Fragment {
         final Animation animation2= AnimationUtils.loadAnimation(getActivity(),R.anim.scan_circle);
         final Animation animation3= AnimationUtils.loadAnimation(getActivity(),R.anim.scan_circle);
         final Animation animation4= AnimationUtils.loadAnimation(getActivity(),R.anim.scan_circle);
-        final Animation animation5= AnimationUtils.loadAnimation(getActivity(),R.anim.sleep);
-        final Animation animation6= AnimationUtils.loadAnimation(getActivity(),R.anim.sleep);
-        final Animation animation7= AnimationUtils.loadAnimation(getActivity(),R.anim.sleep);
+     //   final Animation animation5= AnimationUtils.loadAnimation(getActivity(),R.anim.sleep);
+     //   final Animation animation6= AnimationUtils.loadAnimation(getActivity(),R.anim.sleep);
+     //   final Animation animation7= AnimationUtils.loadAnimation(getActivity(),R.anim.sleep);
 
         final ImageView imageView1=view.findViewById(R.id.circle1);
         final ImageView imageView2=view.findViewById(R.id.circle2);
         final ImageView imageView3=view.findViewById(R.id.circle3);
         final ImageView imageView4=view.findViewById(R.id.circle4);
-        final TextView textView1 = view.findViewById(R.id.sleep1);
-        final TextView textView2 = view.findViewById(R.id.sleep2);
-        final TextView textView3 = view.findViewById(R.id.sleep3);
+     //   final TextView textView1 = view.findViewById(R.id.sleep1);
+     //   final TextView textView2 = view.findViewById(R.id.sleep2);
+     //   final TextView textView3 = view.findViewById(R.id.sleep3);
 
-        textView1.startAnimation(animation5);
+     /*   textView1.startAnimation(animation5);
         animation6.setStartOffset(800);
         textView2.startAnimation(animation6);
         animation7.setStartOffset(1600);
         textView3.startAnimation(animation7);
-
+     */
         animation1.setInterpolator(new LinearInterpolator());
         animation2.setInterpolator(new LinearInterpolator());
         animation3.setInterpolator(new LinearInterpolator());
@@ -60,6 +62,15 @@ public class BabyFragment extends Fragment {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                ObjectAnimator animator1 = ObjectAnimator.ofFloat(imageButton, "rotation", 0,15,0,-15,0,15,0);
+                animator1.setStartDelay(100);
+                animator1.setDuration(1000);
+                animator1.start();
+
+                Toast.makeText(getActivity(), "API尚未写入", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "敬请期待", Toast.LENGTH_SHORT).show();
+
                 imageView1.startAnimation(animation1);
 
                 animation2.setStartOffset(800);

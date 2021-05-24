@@ -1,5 +1,6 @@
 package com.example.fooding;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -32,6 +33,9 @@ public class Welcome extends AppCompatActivity {
         animation1.setInterpolator(new AnticipateOvershootInterpolator());
         textView.startAnimation(animation1);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -41,13 +45,12 @@ public class Welcome extends AppCompatActivity {
             }
         }, 2000);
 
+
         SharedPreferences sp = getPreferences(MODE_PRIVATE);
         boolean isFirst = sp.getBoolean("isFirst", true);
 
         if (isFirst) {
-
             sp.edit().putBoolean("isFirst", false).commit();
-
             LitePal.getDatabase();
 
             String whole_store[][] = {

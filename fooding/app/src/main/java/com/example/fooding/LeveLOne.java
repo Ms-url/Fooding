@@ -11,12 +11,16 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.fooding.adapter.EatingRestaurantAdapter;
 import com.example.fooding.adapter.LevelOneReLeftAdapter;
@@ -34,6 +38,9 @@ public class LeveLOne extends AppCompatActivity {
 
     ConstraintLayout constraintLayout;
     TextView textView_title;
+    TextView textView_answer;
+    Button button_begin;
+    ImageView imageView;
     int hi;
 
     @Override
@@ -42,14 +49,32 @@ public class LeveLOne extends AppCompatActivity {
         hi = constraintLayout.getMeasuredHeight();
     }
 
+    private Handler handler = new Handler() {
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 1:
+                    imageView.setVisibility(View.VISIBLE);
+                    textView_answer.setVisibility(View.VISIBLE);
+                    button_begin.setClickable(false);
+            }
+        }
+    };
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leve_l_one);
         constraintLayout = findViewById(R.id.level_one_answer_body);
         textView_title = findViewById(R.id.level_one_answer_title);
+        button_begin = findViewById(R.id.begin_bt);
+        imageView = findViewById(R.id.level_one_answer_imageView);
+        textView_answer = findViewById(R.id.level_one_answer_answer);
+
         ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
+        if (actionBar!=null)actionBar.hide();
+        imageView.setVisibility(View.GONE);
+        textView_answer.setVisibility(View.GONE);
 
         constraintLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
@@ -91,5 +116,29 @@ public class LeveLOne extends AppCompatActivity {
         recyclerView1.setAdapter(dataAdapter);
         recyclerView2.setAdapter(adapter);
 
+        button_begin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ObjectAnimator animator1 = ObjectAnimator.ofFloat(constraintLayout, "translationY", -hi + 106 * 2,0);
+                animator1.setStartDelay(100);
+                animator1.setDuration(1000);
+                animator1.start();
+
+                showResponse(1);
+            }
+        });
+
+    }
+
+
+    private void showResponse(int num) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Message message = new Message();
+                message.what = num;
+                handler.sendMessage(message);
+            }
+        }).start();
     }
 }

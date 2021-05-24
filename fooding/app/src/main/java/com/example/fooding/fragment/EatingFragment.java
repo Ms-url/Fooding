@@ -39,11 +39,11 @@ public class EatingFragment extends Fragment {
         fragmentList.clear();
         fragmentTitle.clear();
         fragmentTitle.add("食堂");
-        fragmentTitle.add("地点");
-        fragmentTitle.add("风格");
+     //   fragmentTitle.add("地点");
+     //   fragmentTitle.add("风格");
         fragmentList.add(new RestaurantFragment());
-        fragmentList.add(new LocationFragment());
-        fragmentList.add(new StyleFragment());
+     //   fragmentList.add(new LocationFragment());
+     //   fragmentList.add(new StyleFragment());
         eating_view_pager.setAdapter(new ViewPagerAdapter(getChildFragmentManager(),
                 ViewPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT));
         tabLayout.setupWithViewPager(eating_view_pager);
