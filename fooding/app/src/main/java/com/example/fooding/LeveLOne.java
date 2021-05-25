@@ -18,7 +18,9 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,7 +42,10 @@ public class LeveLOne extends AppCompatActivity {
     TextView textView_title;
     TextView textView_answer;
     Button button_begin;
+    ImageButton imageButton_cancel;
+    ImageButton imageButton_restart;
     ImageView imageView;
+    ImageView imageView1;
     int hi;
 
     @Override
@@ -54,8 +59,15 @@ public class LeveLOne extends AppCompatActivity {
             switch (msg.what) {
                 case 1:
                     imageView.setVisibility(View.VISIBLE);
+                    imageView1.setVisibility(View.VISIBLE);
                     textView_answer.setVisibility(View.VISIBLE);
                     button_begin.setClickable(false);
+                    break;
+                case 2:
+                    button_begin.setClickable(true);
+                    break;
+                case 3:
+
             }
         }
     };
@@ -69,18 +81,42 @@ public class LeveLOne extends AppCompatActivity {
         textView_title = findViewById(R.id.level_one_answer_title);
         button_begin = findViewById(R.id.begin_bt);
         imageView = findViewById(R.id.level_one_answer_imageView);
+        imageView1 = findViewById(R.id.level_one_answer_imageView_s);
         textView_answer = findViewById(R.id.level_one_answer_answer);
+        imageButton_cancel = findViewById(R.id.level_one_cancle_button);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar!=null)actionBar.hide();
         imageView.setVisibility(View.GONE);
+        imageView1.setVisibility(View.GONE);
         textView_answer.setVisibility(View.GONE);
+
+        imageButton_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ObjectAnimator animator1 = ObjectAnimator.ofFloat(constraintLayout, "translationY", 0, -hi + 91 * 2);
+                animator1.setStartDelay(100);
+                animator1.setDuration(1000);
+                animator1.start();
+                showResponse(2);
+            }
+        });
+
+        imageButton_restart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ObjectAnimator animator1 = ObjectAnimator.ofFloat(imageView, "rotation", 0, 15, 0, -15, 0, 15, 0);
+                animator1.setStartDelay(100);
+                animator1.setDuration(1000);
+                animator1.start();
+            }
+        });
 
         constraintLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
                 hi = constraintLayout.getMeasuredHeight();
-                ObjectAnimator animator1 = ObjectAnimator.ofFloat(constraintLayout, "translationY", 0, -hi + 98 * 2);
+                ObjectAnimator animator1 = ObjectAnimator.ofFloat(constraintLayout, "translationY", 0, -hi + 91 * 2);
                 animator1.setStartDelay(100);
                 animator1.setDuration(1000);
                 animator1.start();
@@ -107,7 +143,7 @@ public class LeveLOne extends AppCompatActivity {
         LevelOneReLeftAdapter adapter = new LevelOneReLeftAdapter(stores);
 
         recyclerView1.addItemDecoration(new SpacesItemDecoration(12));
-        recyclerView2.addItemDecoration(new SpacesItemDecoration(8));
+        recyclerView2.addItemDecoration(new SpacesItemDecoration(12));
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(this);
@@ -123,6 +159,8 @@ public class LeveLOne extends AppCompatActivity {
                 animator1.setStartDelay(100);
                 animator1.setDuration(1000);
                 animator1.start();
+
+
 
                 showResponse(1);
             }

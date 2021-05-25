@@ -34,9 +34,8 @@
 
                 <RadioButton
                     android:id="@+id/level_one_card_whether_click"
-                    android:layout_width="0dp"
+                    android:layout_width="16dp"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="6sp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="1" />
             </LinearLayout>

@@ -10,7 +10,7 @@
     <dimen name="textSize_17_1">17sp</dimen>
     <dimen name="textSize_18_1">18sp</dimen>
     <dimen name="textSize_20_1">20sp</dimen>
-    <dimen name="marg">12sp</dimen>
+    <dimen name="marg">10sp</dimen>
     <dimen name="marg2">10sp</dimen>
 
     <!--  common_recycler  -->
@@ -25,7 +25,7 @@
     <!--   level_one_class -->
     <dimen name="jia_actionBar">52dp</dimen>
     <dimen name="level_one_big_button">99dp</dimen>
-    <dimen name="level_one_xiao1_button">66dp</dimen>
+    <dimen name="level_one_xiao1_button">46dp</dimen>
     <dimen name="level_one_xiao2_button">46dp</dimen>
     <dimen name="level_one_left_button_left_distance">67dp</dimen>
     <dimen name="level_one_right_button_right_distance">27dp</dimen>

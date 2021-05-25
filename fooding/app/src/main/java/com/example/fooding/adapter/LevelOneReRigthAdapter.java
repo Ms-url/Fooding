@@ -11,12 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fooding.R;
-import com.example.fooding.data.DataCommon;
 import com.example.fooding.data.Food;
-import com.example.fooding.data.Restaurant;
 import com.example.fooding.data.Store;
 import com.example.fooding.unit.FlowLayout;
-import com.example.fooding.unit.FlowLayout2;
 
 import org.litepal.LitePal;
 

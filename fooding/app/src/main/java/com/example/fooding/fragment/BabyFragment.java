@@ -31,6 +31,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class BabyFragment extends Fragment {
     View view;
     Button button_init;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +40,7 @@ public class BabyFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view =inflater.inflate(R.layout.fragment_baby, container, false);
+        view = inflater.inflate(R.layout.fragment_baby, container, false);
         button_init = view.findViewById(R.id.bt_init);
 
         button_init.setOnClickListener(new View.OnClickListener() {
@@ -48,27 +49,28 @@ public class BabyFragment extends Fragment {
                 LitePal.deleteAll(Restaurant.class);
                 LitePal.deleteAll(Store.class);
                 LitePal.deleteAll(Food.class);
-                SharedPreferences sp = getActivity().getPreferences(MODE_PRIVATE);
-                sp.edit().putBoolean("isFirst", true).commit();
+                SharedPreferences.Editor init = getActivity().getSharedPreferences("cook_data", MODE_PRIVATE).edit();
+                init.putBoolean("isFirst", true).apply();
+
             }
         });
 
 
-        final Animation animation1= AnimationUtils.loadAnimation(getActivity(),R.anim.scan_circle);
-        final Animation animation2= AnimationUtils.loadAnimation(getActivity(),R.anim.scan_circle);
-        final Animation animation3= AnimationUtils.loadAnimation(getActivity(),R.anim.scan_circle);
-        final Animation animation4= AnimationUtils.loadAnimation(getActivity(),R.anim.scan_circle);
-     //   final Animation animation5= AnimationUtils.loadAnimation(getActivity(),R.anim.sleep);
-     //   final Animation animation6= AnimationUtils.loadAnimation(getActivity(),R.anim.sleep);
-     //   final Animation animation7= AnimationUtils.loadAnimation(getActivity(),R.anim.sleep);
+        final Animation animation1 = AnimationUtils.loadAnimation(getActivity(), R.anim.scan_circle);
+        final Animation animation2 = AnimationUtils.loadAnimation(getActivity(), R.anim.scan_circle);
+        final Animation animation3 = AnimationUtils.loadAnimation(getActivity(), R.anim.scan_circle);
+        final Animation animation4 = AnimationUtils.loadAnimation(getActivity(), R.anim.scan_circle);
+        //   final Animation animation5= AnimationUtils.loadAnimation(getActivity(),R.anim.sleep);
+        //   final Animation animation6= AnimationUtils.loadAnimation(getActivity(),R.anim.sleep);
+        //   final Animation animation7= AnimationUtils.loadAnimation(getActivity(),R.anim.sleep);
 
-        final ImageView imageView1=view.findViewById(R.id.circle1);
-        final ImageView imageView2=view.findViewById(R.id.circle2);
-        final ImageView imageView3=view.findViewById(R.id.circle3);
-        final ImageView imageView4=view.findViewById(R.id.circle4);
-     //   final TextView textView1 = view.findViewById(R.id.sleep1);
-     //   final TextView textView2 = view.findViewById(R.id.sleep2);
-     //   final TextView textView3 = view.findViewById(R.id.sleep3);
+        final ImageView imageView1 = view.findViewById(R.id.circle1);
+        final ImageView imageView2 = view.findViewById(R.id.circle2);
+        final ImageView imageView3 = view.findViewById(R.id.circle3);
+        final ImageView imageView4 = view.findViewById(R.id.circle4);
+        //   final TextView textView1 = view.findViewById(R.id.sleep1);
+        //   final TextView textView2 = view.findViewById(R.id.sleep2);
+        //   final TextView textView3 = view.findViewById(R.id.sleep3);
 
      /*   textView1.startAnimation(animation5);
         animation6.setStartOffset(800);
@@ -86,7 +88,7 @@ public class BabyFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                ObjectAnimator animator1 = ObjectAnimator.ofFloat(imageButton, "rotation", 0,15,0,-15,0,15,0);
+                ObjectAnimator animator1 = ObjectAnimator.ofFloat(imageButton, "rotation", 0, 15, 0, -15, 0, 15, 0);
                 animator1.setStartDelay(100);
                 animator1.setDuration(1000);
                 animator1.start();

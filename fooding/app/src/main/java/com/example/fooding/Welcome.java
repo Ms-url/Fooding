@@ -45,8 +45,7 @@ public class Welcome extends AppCompatActivity {
             }
         }, 2000);
 
-
-        SharedPreferences sp = getPreferences(MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("cook_data", MODE_PRIVATE);
         boolean isFirst = sp.getBoolean("isFirst", true);
 
         if (isFirst) {

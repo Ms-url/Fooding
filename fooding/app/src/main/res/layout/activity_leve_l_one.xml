@@ -20,15 +20,16 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/level_one_bottom_height"
             android:layout_gravity="bottom"
-            android:background="@drawable/circle_level_one_bottom">
+            android:background="@color/white2">
 
 
         </LinearLayout>
 
         <ImageButton
-            android:layout_width="@dimen/level_one_xiao1_button"
-            android:layout_height="@dimen/level_one_xiao1_button"
-            android:layout_gravity="center_vertical"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10sp"
             android:layout_marginLeft="@dimen/level_one_left_button_left_distance"
             android:background="@drawable/ic_baseline_offline_bolt_24" />
 
@@ -36,7 +37,7 @@
             android:id="@+id/begin_bt"
             android:layout_width="@dimen/level_one_big_button"
             android:layout_height="@dimen/level_one_big_button"
-            android:layout_gravity="center|top"
+            android:layout_gravity="center"
             android:background="@drawable/circle1"
             android:text="@string/GO"
             android:textColor="@color/white"
@@ -44,13 +45,16 @@
             app:backgroundTint="#FF5722" />
 
         <ImageButton
+            android:id="@+id/level_one_restart_button"
             android:layout_width="@dimen/level_one_xiao1_button"
             android:layout_height="@dimen/level_one_xiao1_button"
-            android:layout_gravity="right"
+            android:layout_gravity="right|bottom"
             android:layout_marginRight="@dimen/level_one_right_button_right_distance"
-            android:background="@drawable/ic_baseline_next_plan_24" />
+            android:layout_marginBottom="10sp"
+            android:background="@drawable/ic_baseline_flip_camera_android_24" />
 
         <ImageButton
+            android:id="@+id/level_one_cancle_button"
             android:layout_width="@dimen/level_one_xiao2_button"
             android:layout_height="@dimen/level_one_xiao2_button"
             android:layout_gravity="right|bottom"
