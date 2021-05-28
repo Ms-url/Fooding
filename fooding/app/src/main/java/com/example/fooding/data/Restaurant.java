@@ -4,7 +4,7 @@ import org.litepal.crud.LitePalSupport;
 
 public class Restaurant extends LitePalSupport {
     private String name;
-    private int id;    //10001
+    private int id;               //10001
     private String color;
     private String background;
     private int mod;

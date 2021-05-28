@@ -84,6 +84,7 @@ public class LeveLOne extends AppCompatActivity {
         imageView1 = findViewById(R.id.level_one_answer_imageView_s);
         textView_answer = findViewById(R.id.level_one_answer_answer);
         imageButton_cancel = findViewById(R.id.level_one_cancle_button);
+        imageButton_restart = findViewById(R.id.level_one_restart_button);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar!=null)actionBar.hide();
@@ -159,7 +160,6 @@ public class LeveLOne extends AppCompatActivity {
                 animator1.setStartDelay(100);
                 animator1.setDuration(1000);
                 animator1.start();
-
 
 
                 showResponse(1);

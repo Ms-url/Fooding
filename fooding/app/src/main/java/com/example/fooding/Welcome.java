@@ -3,6 +3,7 @@ package com.example.fooding;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -28,10 +29,26 @@ public class Welcome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wellcome);
         TextView textView = findViewById(R.id.the_welcome_word);
+        TextView textView1 = findViewById(R.id.zhou);
+        TextView textView2 = findViewById(R.id.ge);
+        TextView textView3 = findViewById(R.id.chi);
+        TextView textView4 = findViewById(R.id.huo);
 
-        final Animation animation1 = AnimationUtils.loadAnimation(this, R.anim.welcome_anim);
+       final Animation animation1 = AnimationUtils.loadAnimation(this, R.anim.welcome_anim);
+       final Animation animation2 = AnimationUtils.loadAnimation(this, R.anim.welcome_anim);
+       final Animation animation3 = AnimationUtils.loadAnimation(this, R.anim.welcome_anim);
+       final Animation animation4 = AnimationUtils.loadAnimation(this, R.anim.welcome_anim);
         animation1.setInterpolator(new AnticipateOvershootInterpolator());
-        textView.startAnimation(animation1);
+        animation2.setInterpolator(new AnticipateOvershootInterpolator());
+        animation3.setInterpolator(new AnticipateOvershootInterpolator());
+        animation4.setInterpolator(new AnticipateOvershootInterpolator());
+        animation2.setStartOffset(600);
+        animation3.setStartOffset(600);
+        animation4.setStartOffset(600);
+        textView1.startAnimation(animation1);
+        textView2.startAnimation(animation1);
+        textView3.startAnimation(animation1);
+        textView4.startAnimation(animation1);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
@@ -43,7 +60,7 @@ public class Welcome extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }
-        }, 2000);
+        }, 2400);
 
         SharedPreferences sp = getSharedPreferences("cook_data", MODE_PRIVATE);
         boolean isFirst = sp.getBoolean("isFirst", true);

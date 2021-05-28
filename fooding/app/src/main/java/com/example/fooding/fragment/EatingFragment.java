@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.fooding.R;
+import com.example.fooding.fragment.eatingsecond.CountFragment;
 import com.example.fooding.fragment.eatingsecond.LocationFragment;
 import com.example.fooding.fragment.eatingsecond.RestaurantFragment;
 import com.example.fooding.fragment.eatingsecond.StyleFragment;
@@ -39,15 +40,17 @@ public class EatingFragment extends Fragment {
         fragmentList.clear();
         fragmentTitle.clear();
         fragmentTitle.add("食堂");
-        fragmentTitle.add("地点");
-        fragmentTitle.add("风格");
+        fragmentTitle.add("统计");
+      //  fragmentTitle.add("地点");
+      //  fragmentTitle.add("风格");
         fragmentList.add(new RestaurantFragment());
-        fragmentList.add(new LocationFragment());
-        fragmentList.add(new StyleFragment());
+        fragmentList.add(new CountFragment());
+      //  fragmentList.add(new LocationFragment());
+      //  fragmentList.add(new StyleFragment());
         eating_view_pager.setAdapter(new ViewPagerAdapter(getChildFragmentManager(),
                 ViewPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT));
         tabLayout.setupWithViewPager(eating_view_pager);
-        eating_view_pager.setOffscreenPageLimit(3);
+      //  eating_view_pager.setOffscreenPageLimit(3);
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

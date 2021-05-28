@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="TabTextStyle">
         <item name="android:textSize">@dimen/textSize_12</item>
     </style>
@@ -15,7 +16,7 @@
 
     <!--  common_recycler  -->
     <dimen name="re_item_marg">12sp</dimen>
-    <dimen name="welcome">28sp</dimen>
+
 
     <!--   eating_restaurant_fragment  -->
     <dimen name="three_button_r">46dp</dimen>
@@ -33,7 +34,9 @@
     <dimen name="level_one_left_recycler_width">100dp</dimen>
     <dimen name="level_one_bottom_height">74dp</dimen>
 
-
-
+    <!--   welcome  -->
+    <dimen name="welcome">36sp</dimen>
+    <dimen name="welcome_text">26dp</dimen>
+    <dimen name="marge">6sp</dimen>
 
 </resources>
