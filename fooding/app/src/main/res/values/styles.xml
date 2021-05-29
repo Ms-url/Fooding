@@ -25,7 +25,7 @@
 
     <!--   level_one_class -->
     <dimen name="jia_actionBar">52dp</dimen>
-    <dimen name="level_one_big_button">99dp</dimen>
+    <dimen name="level_one_big_button">110dp</dimen>
     <dimen name="level_one_xiao1_button">46dp</dimen>
     <dimen name="level_one_xiao2_button">46dp</dimen>
     <dimen name="level_one_left_button_left_distance">67dp</dimen>

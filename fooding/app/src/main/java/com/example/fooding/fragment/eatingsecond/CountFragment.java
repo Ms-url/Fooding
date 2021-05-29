@@ -39,6 +39,7 @@ public class CountFragment extends Fragment {
             re.setCount(i+1);
         }
 
+        /*
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
         List<Restaurant> restaurants = LitePal.findAll(Restaurant.class);
         for (int i = 0; i < restaurants.size(); i++) {
@@ -63,6 +64,7 @@ public class CountFragment extends Fragment {
         pieChart.setData(pieData);
         pieChart.highlightValues(null);
         pieChart.invalidate();
+         */
 
 
         return view;

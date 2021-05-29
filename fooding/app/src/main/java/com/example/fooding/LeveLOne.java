@@ -138,7 +138,6 @@ public class LeveLOne extends AppCompatActivity {
         RecyclerView recyclerView1 = findViewById(R.id.level_one_right_recycler);
         RecyclerView recyclerView2 = findViewById(R.id.level_one_left_recycler);
         List<Store> stores = LitePal.where("up=?", rest_name).find(Store.class);
-        Log.e("kkkkkkkkkk", String.valueOf(stores.size()));
 
         LevelOneReRigthAdapter dataAdapter = new LevelOneReRigthAdapter(stores);
         LevelOneReLeftAdapter adapter = new LevelOneReLeftAdapter(stores);
@@ -160,7 +159,6 @@ public class LeveLOne extends AppCompatActivity {
                 animator1.setStartDelay(100);
                 animator1.setDuration(1000);
                 animator1.start();
-
 
                 showResponse(1);
             }
