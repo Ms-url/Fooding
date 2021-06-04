@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.eatingsecond.RestaurantFragment">
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh_main"
         android:layout_width="match_parent"
@@ -15,6 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add"
         android:layout_width="wrap_content"
@@ -22,7 +25,4 @@
         android:layout_gravity="bottom|right"
         android:layout_margin="16sp"
         android:src="@drawable/add" />
-
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
 </FrameLayout>
